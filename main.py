@@ -29,7 +29,7 @@ while True:
         radioDriver.switch_to.window("tab" + str(chr(i)))
 
     radioDriver.get("https://www.liveatc.net/hlisten.php?mount=" + settings['liveatc'][0]['stations'][i] + "&icao=" + settings['liveatc'][0]['airport_icao'])
-    print("Created audio session for " + settings['liveatc'][0]['stations'][i])
+    print("\nCreated audio session for " + settings['liveatc'][0]['stations'][i] + "\n")
 
     if i + 1 == len(settings['liveatc'][0]['stations']):
         break
@@ -38,3 +38,4 @@ while True:
 
 
 adsbDriver.get("https://globe.adsbexchange.com/?lat=" + settings['adsbexchange'][0]['lat'] + "&lon=" + settings['adsbexchange'][0]['lon'] + "&zoom=" + settings['adsbexchange'][0]['zoom'])
+print("Started radar screen")
