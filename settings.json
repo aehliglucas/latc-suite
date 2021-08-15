@@ -1,0 +1,16 @@
+{
+    "adsbexchange": [
+        {
+            "lat": "47.275299",
+            "lon": "8.325701",
+            "zoom": "10"
+        }
+    ],
+
+    "liveatc": [
+        {
+            "airport_icao": "lszh",
+            "stations": ["lszh1_twr", "lszh1_app_east"]
+        }
+    ]
+}
