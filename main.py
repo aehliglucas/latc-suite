@@ -16,8 +16,8 @@ settings = json.load(settingsFile)
 radioDriver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 adsbDriver = webdriver.Chrome(ChromeDriverManager().install(), options=adsbOptions)
 
+# Audio session creation
 i = 0
-
 while True:
 
     s = settings['liveatc'][0]['stations'][i]
@@ -35,11 +35,6 @@ while True:
         break
 
     i = i + 1
-
-
-# for s in settings['liveatc'][0]['stations']:
-#     radioDriver.get("https://www.liveatc.net/hlisten.php?mount=" + s + "&icao=" + settings['liveatc'][0]['airport_icao'])
-#     print(radioDriver.title)
 
 
 adsbDriver.get("https://globe.adsbexchange.com/?lat=" + settings['adsbexchange'][0]['lat'] + "&lon=" + settings['adsbexchange'][0]['lon'] + "&zoom=" + settings['adsbexchange'][0]['zoom'])
