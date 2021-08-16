@@ -10,7 +10,7 @@
     "liveatc": [
         {
             "airport_icao": "lszh",
-            "stations": ["lszh1_twr"]
+            "stations": ["lszh1_twr", "lszh1_app_east"]
         }
     ]
 }

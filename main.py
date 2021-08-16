@@ -8,7 +8,7 @@ import json
 seleniumLogger.setLevel(logging.WARNING)
 options = Options()
 adsbOptions = Options()
-options.add_argument("--headless")
+# options.add_argument("--headless")
 adsbOptions.add_argument("--start-maximized")
 settingsFile = open('settings.json')
 settings = json.load(settingsFile)
@@ -21,14 +21,14 @@ i = 0
 while True:
 
     s = settings['liveatc'][0]['stations'][i]
-    radioDriver.get("https://www.liveatc.net/hlisten.php?mount=" + s + "&icao=" + settings['liveatc'][0]['airport_icao'])
-    radioDriver.find_element_by_xpath("//*[@id='mep_0']/div/div[3]/div[1]/button").click()
 
     if i > 0:
         radioDriver.execute_script("window.open('about:blank', 'tab" + str(chr(i)) + "')")
         radioDriver.switch_to.window("tab" + str(chr(i)))
 
-    radioDriver.get("https://www.liveatc.net/hlisten.php?mount=" + settings['liveatc'][0]['stations'][i] + "&icao=" + settings['liveatc'][0]['airport_icao'])
+    radioDriver.get("https://www.liveatc.net/hlisten.php?mount=" + s + "&icao=" + settings['liveatc'][0]['airport_icao'])
+    radioDriver.find_element_by_xpath("//*[@id='mep_0']/div/div[3]/div[1]/button").click()
+
     print("\nCreated audio session for " + settings['liveatc'][0]['stations'][i] + "\n")
 
     if i + 1 == len(settings['liveatc'][0]['stations']):
